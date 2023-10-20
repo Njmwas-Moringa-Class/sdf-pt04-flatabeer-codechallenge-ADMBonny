@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JSON File Inclusion</title>
+</head>
+<body>
+    <h1>JSON Data</h1>
+    <pre id="json-data"></pre>
+
+    <script>
+        
+        fetch('data.json')
+            .then(response => response.json())
+            .then(data => {
+                
+                document.getElementById('json-data').textContent = JSON.stringify(data, null, 2);
+            })
+            .catch(error => console.error('Error fetching JSON file:', error));
+    </script>
+</body>
+</html>
